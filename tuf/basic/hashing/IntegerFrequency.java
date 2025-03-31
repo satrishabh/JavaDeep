@@ -9,6 +9,8 @@ class IntegerFrequency{
         for(int frequency:findFrequency){
             System.out.print(bruteForce(frequency,elements)+" ");
         }
+        System.out.println();
+        hashStrategy(elements,findFrequency);
     }
     private static int bruteForce(int frequency, int[] elements){
         int count=0;
@@ -18,5 +20,16 @@ class IntegerFrequency{
             }
         }
         return count;
+    }
+    private static void  hashStrategy(int[] elements, int[] frequency){
+        int[] hash=new int[13];
+        // finding
+        for(int i=0;i<elements.length;i++){
+            hash[elements[i]]++;
+        }
+        // fetching
+        for(int i:frequency){
+            System.out.print(hash[i]+" ");
+        }
     }
 }
